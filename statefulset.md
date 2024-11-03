@@ -1,5 +1,5 @@
-what is the stateful application in expense project?
-A) mysql is the stateful application
+**what is the stateful application in expense project?**
+- MySQL is the stateful application
 
 **statefulset vs deployment**
 - Statefulset is for DB related application
