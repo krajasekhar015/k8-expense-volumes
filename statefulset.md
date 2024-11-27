@@ -217,7 +217,37 @@ kubectl get pods
 kubectl get svc
 ```
 - Copy frontend Loadbalancer IP address 
-- We need to open all ports (All TCP) in cluster secuirty group because we don't know which port it will open but will we reestrict in future. 
+- We need to open all ports (All TCP) in cluster secuirty group because we don't know which port it will open but will we reestrict in future.
+
+- If we want to check whether the data replictaion is successfully done or not, then go to all the nodes and check.
+
+```
+kubectl exec -it mysql-1 -- bash
+```
+```
+mysql -u root -pExpense@1
+```
+```
+use transcations;
+```
+```
+select * from transactions;
+```
+
+- Now, check for second node
+
+```
+kubectl exec -it mysql-0 -- bash
+```
+```
+mysql -u root -pExpense@1
+```
+```
+use transcations;
+```
+```
+select * from transactions;
+```
 
 
 
